@@ -12,26 +12,31 @@ This module should be used with extreme caution. It gives a principle **insanely
 Clone down the repo or reference the git link directly in the terraform source argument. Supply *project* OR *folder* OR *organization* depending on what level the IAM binding should be. Ex:
 
 ~~~
-module "superadmin_project" {
-    source   = github
-    project  = "my-project"
-    member   = "user:myuser@myorg.com"
+module "super-admin" {
+  source              = "github.com/mike-callahan/gcp-super-admin.git"
+  binding_level       = "PROJECT"
+  resource_manager_id = "my-project"
+  member              = "user:myuser@mycompany.com"
 }
 
-module "superadmin_folder" {
-    source   = github
-    folder   = "folders/123"
-    member   = "serviceAccount:myaccount.iam.gserviceaccount.com"
+module "super-admin" {
+  source              = "github.com/mike-callahan/gcp-super-admin.git"
+  binding_level       = "FOLDER"
+  resource_manager_id = "my-project"
+  member              = "user:myuser@mycompany.com"
 }
 
-module "superadmin_project" {
-    source        = github
-    organization  = "organizations/123"
-    member        = "group:admins@myorg.com"
+module "super-admin" {
+  source              = "github.com/mike-callahan/gcp-super-admin.git"
+  binding_level       = "ORGANIZATION"
+  resource_manager_id = "my-project"
+  member              = "user:myuser@mycompany.com"
 }
 ~~~
 
 # Notes
 * Includes any role with the keyword 'admin' or 'Admin'. It's possible I missed a role if the role name doesn't include that text. Feel free to submit a PR if you find a new role that should be added.
 * This is in NO way endorsed, warranted, recommended, or recognized by Google.
+* This is slow, it takes around 10-15 minutes to apply all the roles.
+* I would keep this in a seperate terraform state file or it will slow down your pipeline.
 * Roles up-to-date as of 12/15/2023. Includes GA and Beta roles.

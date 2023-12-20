@@ -1,19 +1,13 @@
-variable "project" {
-  description = "the project node to apply the roles to"
-  default = null
+variable "binding_level" {
+  description = "The type of resource the member should bind to. One of PROJECT, FOLDER, or ORGANIZATION"
+  default     = "PROJECT"
 }
 
-variable "folder" {
-    description = "the folder node to apply the roles to"
-  default = null
-}
-
-variable "organization" {
-  description = "the organization node to apply the roles to"
-  default = null
+variable "resource_manager_id" {
+  description = "The resource id to bind to."
 }
 
 variable "member" {
-  description = "the member superuser roles should be applied to"
-  type = string
+  description = "The member the superuser roles should be applied to."
+  type        = string
 }

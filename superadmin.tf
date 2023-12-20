@@ -1,6 +1,7 @@
 // Import roles from json file
 locals {
-  roles = jsondecode(file("${path.module}/superadmin_roles.json"))
+  role_import = jsondecode(file("${path.module}/roles.json"))
+  roles       = var.admin_type == "SUPERADMIN" ? local.role_import.super_admin : local.role_import.admin
 }
 
 

@@ -3,6 +3,11 @@ variable "binding_level" {
   default     = "PROJECT"
 }
 
+variable "admin_type" {
+  description = "Whether to create an admin or super-admin. One of ADMIN or SUPERADMIN"
+  default     = "ADMIN"
+}
+
 variable "resource_manager_id" {
   description = "The resource id to bind to."
 }

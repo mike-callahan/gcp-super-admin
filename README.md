@@ -14,6 +14,7 @@ Clone down the repo or reference the git link directly in the terraform source a
 ~~~
 module "super-admin" {
   source              = "github.com/mike-callahan/gcp-super-admin.git"
+  admin_type          = "SUPERADMIN"
   binding_level       = "PROJECT"
   resource_manager_id = "my-project"
   member              = "user:myuser@mycompany.com"
@@ -21,21 +22,24 @@ module "super-admin" {
 
 module "super-admin" {
   source              = "github.com/mike-callahan/gcp-super-admin.git"
+  admin_type          = "ADMIN"
   binding_level       = "FOLDER"
   resource_manager_id = "my-project"
-  member              = "user:myuser@mycompany.com"
+  member              = "group:mygroup@mycompany.com"
 }
 
 module "super-admin" {
   source              = "github.com/mike-callahan/gcp-super-admin.git"
+  admin_type          = "SUPERADMIN"
   binding_level       = "ORGANIZATION"
   resource_manager_id = "my-project"
-  member              = "user:myuser@mycompany.com"
+  member              = "serviceAccount:mySA@iam.gserviceaccount.com"
 }
 ~~~
 
 # Notes
-* Includes any role with the keyword 'admin' or 'Admin'. It's possible I missed a role if the role name doesn't include that text. Feel free to submit a PR if you find a new role that should be added.
+* Superadmin contains any role with the keyword 'admin' or 'Admin'. It's possible I missed a role if the role name doesn't include that text. Feel free to submit a PR if you find a new role that should be added.
+* Admin is a paired down list that covers most practical use-cases while reducing the number of roles that need to be applied.
 * This is in NO way endorsed, warranted, recommended, or recognized by Google.
 * This is slow, it takes around 10-15 minutes to apply all the roles.
 * I would keep this in a seperate terraform state file or it will slow down your pipeline.

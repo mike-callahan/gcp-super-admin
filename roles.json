@@ -387,12 +387,20 @@
             "roles/storage.folderAdmin",
             "roles/resourcemanager.folderAdmin",
             "roles/resourcemanager.folderIamAdmin",
-            "roles/compute.xpnAdmin"
+            "roles/compute.xpnAdmin",
+            "roles/resourcemanager.folderCreator",
+            "roles/resourcemanager.folderEditor",
+            "roles/resourcemanager.folderMover",
+            "roles/resourcemanager.projectCreator",
+            "roles/resourcemanager.projectDeleter",
+            "roles/resourcemanager.projectMover"
         ],
         "project_only": [
             "roles/resourcemanager.projectIamAdmin",
             "roles/recommender.bigQueryCapacityCommitmentsProjectAdmin",
-            "roles/iam.roleAdmin"
+            "roles/iam.roleAdmin",
+            "roles/resourcemanager.lienModifier",
+            "roles/resourcemanager.projectMover"
         ],
         "other": [
             "roles/gkebackup.delegatedBackupAdmin",
@@ -546,11 +554,19 @@
             "roles/storage.folderAdmin",
             "roles/resourcemanager.folderAdmin",
             "roles/resourcemanager.folderIamAdmin",
-            "roles/compute.xpnAdmin"
+            "roles/compute.xpnAdmin",
+            "roles/resourcemanager.folderCreator",
+            "roles/resourcemanager.folderEditor",
+            "roles/resourcemanager.folderMover",
+            "roles/resourcemanager.projectCreator",
+            "roles/resourcemanager.projectDeleter",
+            "roles/resourcemanager.projectMover"
         ],
         "project_only": [
             "roles/resourcemanager.projectIamAdmin",
-            "roles/iam.roleAdmin"
+            "roles/iam.roleAdmin",
+            "roles/resourcemanager.lienModifier",
+            "roles/resourcemanager.projectMover"
         ],
         "other": [
             "roles/gkebackup.delegatedBackupAdmin",

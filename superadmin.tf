@@ -7,7 +7,7 @@ locals {
 
 // If a project ID is passed in bind the roles at the project level
 resource "google_project_iam_member" "project" {
-  for_each = var.binding_level == "PROJECT" ? toset(local.roles.general, local.roles.project_only) : []
+  for_each = var.binding_level == "PROJECT" ? toset(concat(local.roles.general, local.roles.project_only)) : []
   project  = var.resource_manager_id
   role     = each.key
   member   = var.member

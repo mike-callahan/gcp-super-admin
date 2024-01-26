@@ -370,7 +370,9 @@
             "roles/stream.contentAdmin",
             "roles/stream.instanceAdmin",
             "roles/vmwareengine.vmwareengineAdmin",
-            "roles/workstations.networkAdmin"
+            "roles/workstations.networkAdmin",
+            "roles/resourcemanager.lienModifier",
+            "roles/resourcemanager.projectMover"
         ],
         "organization_only": [
             "roles/policysimulator.orgPolicyAdmin",
@@ -398,9 +400,7 @@
         "project_only": [
             "roles/resourcemanager.projectIamAdmin",
             "roles/recommender.bigQueryCapacityCommitmentsProjectAdmin",
-            "roles/iam.roleAdmin",
-            "roles/resourcemanager.lienModifier",
-            "roles/resourcemanager.projectMover"
+            "roles/iam.roleAdmin"
         ],
         "other": [
             "roles/gkebackup.delegatedBackupAdmin",
@@ -538,7 +538,9 @@
             "roles/storage.hmacKeyAdmin",
             "roles/storage.objectAdmin",
             "roles/stream.contentAdmin",
-            "roles/stream.instanceAdmin"
+            "roles/stream.instanceAdmin",
+            "roles/resourcemanager.lienModifier",
+            "roles/resourcemanager.projectMover"
         ],
         "organization_only": [
             "roles/policysimulator.orgPolicyAdmin",
@@ -564,9 +566,7 @@
         ],
         "project_only": [
             "roles/resourcemanager.projectIamAdmin",
-            "roles/iam.roleAdmin",
-            "roles/resourcemanager.lienModifier",
-            "roles/resourcemanager.projectMover"
+            "roles/iam.roleAdmin"
         ],
         "other": [
             "roles/gkebackup.delegatedBackupAdmin",
